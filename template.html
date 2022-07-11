@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang="$lang$"
+  xml:lang="$lang$"
+  $if(dir)$
+  dir="$dir$"
+  $endif$
+>
+  <head>
+    <!-- TODO clean the template -->
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$ $if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$" />
+    $endif$ $if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+    $endif$ $if(description-meta)$
+    <meta name="description" content="$description-meta$" />
+    $endif$
+
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+
+    <style>
+      $styles.html()$
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+      integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY="
+      crossorigin="anonymous"
+    />
+    $for(css)$
+    <link rel="stylesheet" href="$css$" />
+    $endfor$ $if(math)$ $math$ $endif$ $for(header-includes)$ $header-includes$
+    $endfor$
+  </head>
+  <body>
+    <div class="body-wrapper">
+      $for(include-before)$ $include-before$ $endfor$
+
+      <!-- header start -->
+      <header>
+        <div class="header-title">
+          <h1 class="cv-title">$author$</h1>
+        </div>
+        <div class="header-img">
+          <img src="./img.jpg" alt="Image" class="author-img" />
+        </div>
+      </header>
+      <!-- header end -->
+
+      <div class="cv-body">
+        <div id="author-info">
+          <div id="author-contact">
+            <p id="contact" class="info-text">
+              <strong>Contact</strong><br />
+              $if(phone)$
+              <i class="fa fa-mobile" aria-hidden="true"></i>$phone$<br />
+              $endif$ $if(location)$
+              <i class="fa fa-map-marker" aria-hidden="true"></i
+              >$location$<br />
+              $endif$ $if(email)$
+              <i class="fa fa-envelope-o" aria-hidden="true"></i
+              ><a href="mailto:$email$">$email$</a><br />
+              $endif$ $if(blog)$
+              <i class="fa fa-pencil" aria-hidden="true"></i
+              ><a href="$blog$">$blog$</a><br />
+              $endif$ $if(gitlab)$
+              <i class="fa fa-gitlab" aria-hidden="true"></i
+              ><a href="$gitlab$">$gitlab$</a><br />
+              $endif$ $if(github)$
+              <i class="fa fa-github" aria-hidden="true"></i
+              ><a href="$github$">$github$</a><br />
+              $endif$ $if(codecamp)$
+              <i class="fa fa-free-code-camp" aria-hidden="true"></i
+              ><a href="$codecamp$">$codecamp$</a><br />
+              $endif$ $if(codepen)$
+              <i class="fa fa-codepen" aria-hidden="true"></i
+              ><a href="$codepen$">$codepen$</a><br />
+              $endif$ $if(links)$ $for(links)$ $links$ $endfor$ $endif$
+            </p>
+          </div>
+          <div id="author-interests">
+            <p id="interests" class="info-text">
+              $if(interests)$
+              <strong>Interests</strong><br />
+              $for(interests)$ $interests$<br />
+              $endfor$ $endif$
+            </p>
+          </div>
+        </div>
+        <div id="body-content">$body$</div>
+        $for(include-after)$ $include-after$ $endfor$
+      </div>
+    </div>
+    <footer>
+      <p class="date">last update: $date$</p>
+      <p class="heart">
+        CSS handwritten with <span id="heart">&#x2764;</span>
+      </p>
+    </footer>
+  </body>
+</html>
