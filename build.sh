@@ -10,7 +10,7 @@
 set -eu
 
 CV_DIR="./cv"
-PUB_DIR="./pub"
+PUB_DIR="./docs"
 NOW=$(date '+%Y-%m-%d')
 
 _convert(){
