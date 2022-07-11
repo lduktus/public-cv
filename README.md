@@ -1,6 +1,6 @@
-# Curriculum Vitae
+# [Curriculum Vitae](https://lduktus.github.io/public-cv/)
 
-This a repository for my CV, the setup is not meant to be generic.
+This setup is not meant to be generic.
 
 **Requirements:**
 
